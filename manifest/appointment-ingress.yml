@@ -34,7 +34,7 @@ spec:
             name: appointment-api-service
             port:
               number: 4324
-      - path: api/Appointment/UpdateCheckUp/{AppoinmentId}/{status1}
+      - path: /api/Appointment/UpdateCheckUp/{AppoinmentId}/{status1}
         pathType: Prefix
         backend:
           service:
