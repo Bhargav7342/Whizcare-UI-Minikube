@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.development';
+// import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailNotificationService {
 
-  baseApiUrl:string=environment.baseApiUrl1;
+  // baseApiUrl:string=environment.baseApiUrl1;
 
   constructor(private http:HttpClient) { }
 
@@ -21,6 +21,6 @@ export class EmailNotificationService {
       'date1':date,
       'status':status
     });
-    return this.http.get<string>(this.baseApiUrl+'/Appointment/Email_Notification',{headers:header});
+    return this.http.get<string>('api/Appointment/Email_Notification',{headers:header});
   }
 }

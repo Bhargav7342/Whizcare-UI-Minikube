@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Allergy } from '../Models/database.models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment.development';
+// import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AllergyService {
-  baseApiUrl:string=environment.baseApiUrlallergy
+  // baseApiUrl:string=environment.baseApiUrlallergy
 
   constructor(private http:HttpClient) { }
 
@@ -16,7 +16,7 @@ export class AllergyService {
 
   AddAllergydetails(addallergies:Allergy):Observable<Allergy>
   {
-    return this.http.post<Allergy>(this.baseApiUrl+'/Allergy/AddAllergies',addallergies);
+    return this.http.post<Allergy>('api/Allergy/AddAllergies',addallergies);
   }
 
   getAllAllergy(appid:string):Observable<Allergy[]>{
@@ -25,6 +25,6 @@ export class AllergyService {
       'resposneType':'json',
       'appointmentid':appid,
     });
-    return this.http.get<Allergy[]>(this.baseApiUrl+'/Allergy/GetAllAllergy',{headers:header})
+    return this.http.get<Allergy[]>('api/Allergy/GetAllAllergy',{headers:header})
   }
 }

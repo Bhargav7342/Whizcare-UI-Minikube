@@ -1,15 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.development';
+// import { environment } from 'src/environments/environment.development';
 import { Appointment, Patient, PatientIntialCheckup } from '../Models/database.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NurseService {
-  baseApiUrl:string=environment.baseApiUrl1;
-  baseApiUrl2:string=environment.baseApiUrl
+  // baseApiUrl:string=environment.baseApiUrl1;
+  // baseApiUrl2:string=environment.baseApiUrl
 
   constructor(private http:HttpClient) { }
 
@@ -22,13 +22,13 @@ export class NurseService {
     });
     
 
-    return this.http.get<Appointment[]>(this.baseApiUrl+'/Appointment/getappointmentsbyDate',{headers:header});
+    return this.http.get<Appointment[]>('api/Appointment/getappointmentsbyDate',{headers:header});
   }
 
 
   AddCheckUpDetails(adddetails:PatientIntialCheckup):Observable<PatientIntialCheckup>
   {
-    return this.http.post<PatientIntialCheckup>(this.baseApiUrl+'/PatientCheckUp/AddcheckUpdetails',adddetails);
+    return this.http.post<PatientIntialCheckup>('api/PatientCheckUp/AddcheckUpdetails',adddetails);
   }
 
 
@@ -39,7 +39,7 @@ export class NurseService {
       'resposneType':'json',
       'email':Email,
     });
-    return this.http.get<Patient>(this.baseApiUrl2+'/Patient/GetPatientsByEmail',{headers:header});
+    return this.http.get<Patient>('api/Patient/GetPatientsByEmail',{headers:header});
   }
 
   getCheckupInfo(appId:string):Observable<PatientIntialCheckup>
@@ -49,6 +49,6 @@ export class NurseService {
       'resposneType':'json',
       'appointment_id':appId,
     }); 
-    return this.http.get<PatientIntialCheckup>(this.baseApiUrl+'/PatientCheckUp/GetCheckUpDetailsByAppointmentId',{headers:header});
+    return this.http.get<PatientIntialCheckup>('api/PatientCheckUp/GetCheckUpDetailsByAppointmentId',{headers:header});
   }
 }

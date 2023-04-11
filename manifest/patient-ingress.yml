@@ -69,3 +69,10 @@ spec:
             name: patient-api-service
             port:
               number: 4322
+      - path: /api/api/Patient/GetPatientsByEmail
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 4322

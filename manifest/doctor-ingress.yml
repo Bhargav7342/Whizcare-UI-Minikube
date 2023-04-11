@@ -70,3 +70,10 @@ spec:
             name: doctor-api-service
             port:
               number: 4323
+      - path: /api/Appointment/Email_Notification
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders,HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.development';
+// import { environment } from 'src/environments/environment.development';
 import { Appointment, PatientIntialCheckup, PhysicianAvailabilityStatus } from '../Models/database.models';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Appointment, PatientIntialCheckup, PhysicianAvailabilityStatus } from '
 })
 export class AppointmentService {
 
-  baseApiUrl:string=environment.baseApiUrl1;
+  // baseApiUrl:string=environment.baseApiUrl1;
 
   constructor(private http:HttpClient) { }
 
@@ -19,10 +19,10 @@ export class AppointmentService {
       'resposneType':'json',
       'id':patientId,
     });
-    return this.http.get<Appointment[]>(this.baseApiUrl+'/Appointment/getappointmentsbypatientid',{headers:header})
+    return this.http.get<Appointment[]>('api/Appointment/getappointmentsbypatientid',{headers:header})
   }
   bookAppointment(item:Appointment):Observable<Appointment>{
-    return this.http.post<Appointment>(this.baseApiUrl+'/Appointment/BookAppiontment',item);
+    return this.http.post<Appointment>('api/Appointment/BookAppiontment',item);
   }
 
   sendEmail(email:string,date:string,status:string):Observable<string>
@@ -34,7 +34,7 @@ export class AppointmentService {
       'date1':date,
       'status':status
     });
-    return this.http.get<string>(this.baseApiUrl+'/Appointment/Email_Notification',{headers:header});
+    return this.http.get<string>('api/Appointment/Email_Notification',{headers:header});
   }
 
 
@@ -42,7 +42,7 @@ export class AppointmentService {
   {
     
     
-    return this.http.put<Appointment>(this.baseApiUrl+'/Appointment/Update?AppointmentId='+ appId+'&status1='+ status,status);
+    return this.http.put<Appointment>('api/Appointment/Update?AppointmentId='+ appId+'&status1='+ status,status);
 
   }
 
@@ -50,7 +50,7 @@ export class AppointmentService {
   {
     
     
-    return this.http.put<Appointment>(this.baseApiUrl+'/Appointment/UpdateCheckUp?AppointmentId='+ appId+'&status1='+ status,status);
+    return this.http.put<Appointment>('api/Appointment/UpdateCheckUp?AppointmentId='+ appId+'&status1='+ status,status);
 
   }
 
