@@ -53,8 +53,5 @@ export class AppointmentService {
     return this.http.put<Appointment>('api/Appointment/UpdateCheckUp?AppointmentId='+ appId+'&status1='+ status,status);
 
   }
-
-
- 
   
 }
