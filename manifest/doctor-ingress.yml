@@ -1,0 +1,72 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: patient-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/Doctor/GetDoctorsByEmail
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323
+      - path: /api/Appointment/getappointmentsbyDoctoridAndStatus
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323
+      - path: /api/Appointment/GetAppointmentsAfterCheckup
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323
+      - path: /api/Doctor/AddDoctor
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323
+      - path: /api/Doctor/GetAllDoctors
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323
+      - path: /api/PhysicianAvailabilityStatus/AddAvailability
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323
+      - path: /api/Doctor/GetDoctorsByAvailability
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323
+
+      - path: /api/PhysicianAvailabilityStatus/GetStatus
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323
+      - path: /api/PhysicianAvailabilityStatus/UpdateAvailability
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323

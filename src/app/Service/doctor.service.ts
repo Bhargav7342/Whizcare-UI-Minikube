@@ -1,16 +1,16 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.development';
+// import { environment } from 'src/environments/environment.development';
 import { Appointment, Doctor, HealthHistory, Prescription } from '../Models/database.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DoctorService {
-  baseApiUrlPat:string=environment.baseApiUrl;
-  baseApiUrl:string=environment.baseApiUrlavail;
-  baseApiurl2:string=environment.baseApiUrl1
+  // baseApiUrlPat:string=environment.baseApiUrl;
+  // baseApiUrl:string=environment.baseApiUrlavail;
+  // baseApiurl2:string=environment.baseApiUrl1
 
   constructor(private http:HttpClient) { }
 
@@ -22,7 +22,7 @@ export class DoctorService {
       'Email':email
     });
 
-    return this.http.get<Doctor>(this.baseApiUrl+'/Doctor/GetDoctorsByEmail',{headers:header})
+    return this.http.get<Doctor>('/Doctor/GetDoctorsByEmail',{headers:header})
   }
 
 
@@ -36,7 +36,7 @@ export class DoctorService {
     });
     
 
-    return this.http.get<Appointment[]>(this.baseApiurl2+'/Appointment/getappointmentsbyDoctoridAndStatus',{headers:header});
+    return this.http.get<Appointment[]>('api/Appointment/getappointmentsbyDoctoridAndStatus',{headers:header});
   }
   
   GetAppointmentsAfterCheckup(date:string,docId:string):Observable<Appointment[]>
@@ -47,16 +47,16 @@ export class DoctorService {
       'doc_id':docId,
       'dates':date
     });
-    return this.http.get<Appointment[]>(this.baseApiurl2+'/Appointment/GetAppointmentsAfterCheckup',{headers:header})
+    return this.http.get<Appointment[]>('api/Appointment/GetAppointmentsAfterCheckup',{headers:header})
   }
   
   AddHealthHistory(diagnosis:HealthHistory):Observable<HealthHistory>
   {
-    return this.http.post<HealthHistory>(this.baseApiUrlPat+'/HealthHistory/HealthHistory_Add',diagnosis);
+    return this.http.post<HealthHistory>('api/HealthHistory/HealthHistory_Add',diagnosis);
   }
 
   AddPrescription(prescription:Prescription):Observable<Prescription>
   {
-    return this.http.post<Prescription>(this.baseApiUrlPat+'/Prescriptions/Prescription_Add',prescription);
+    return this.http.post<Prescription>('api/Prescriptions/Prescription_Add',prescription);
   }
 }
