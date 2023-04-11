@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ui
+  name: patient-api
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: ui
+      app: patient-api
   template:
     metadata:
       labels:
-        app: ui
+        app: patient-api
     spec:
       containers:
-        - name: ui
-          image: bhargavbhat2000/whizcare-ui-m:latest
+        - name: patient-api
+          image: bhargavbhat2000/patientservice:cc72da7d675eaf6c5a588cf836340afdd021d6b4
           imagePullPolicy: Always
           resources:
             requests:
@@ -25,3 +25,4 @@ spec:
               memory: 256Mi
           ports:
             - containerPort: 80
+    

@@ -14,7 +14,7 @@ export class PatientServicesService {
 
   patientRegister(addPatient:Patient):Observable<Patient>
   {
-    return this.http.post<Patient>(this.baseApiUrl+'/Patient/Register_Patient',addPatient);
+    return this.http.post<Patient>('api/Patient/Register_Patient',addPatient);
   }
 
   patientLogin(email:string,password:string):Observable<Patient>
@@ -25,12 +25,12 @@ export class PatientServicesService {
       'email':email,
       'pass':password
     });
-    return this.http.get<Patient>(this.baseApiUrl+'/Patient/SignIn_Patient',{headers:headers});
+    return this.http.get<Patient>('api/Patient/SignIn_Patient',{headers:headers});
   }
 
   getAllPatient():Observable<Patient[]>
   {
-    return this.http.get<Patient[]>(this.baseApiUrl+'/Patient/GetAllPatients');
+    return this.http.get<Patient[]>('api/Patient/GetAllPatients');
   }
 
   getPatientById(patientId:string):Observable<Patient>{
@@ -39,7 +39,7 @@ export class PatientServicesService {
       'resposneType':'json',
       'Id':patientId
     });
-    return this.http.get<Patient>(this.baseApiUrl+'/Patient/GetAllPatientsById',{headers:header});
+    return this.http.get<Patient>('api/Patient/GetAllPatientsById',{headers:header});
     
   }
   updatePatient(email: string, updatedData: Patient):Observable<Patient>{
@@ -48,7 +48,7 @@ export class PatientServicesService {
       'resposneType':'json',
       'Email' : email
     });
-    return this.http.put<Patient>(this.baseApiUrl+'/Patient/Update_Patient', updatedData, {headers:header} );
+    return this.http.put<Patient>('api/Patient/Update_Patient', updatedData, {headers:header} );
   }
 
   getHealthHistorybyPatientId(pid:string):Observable<HealthHistory[]>
@@ -58,7 +58,7 @@ export class PatientServicesService {
       'resposneType':'json',
       'patientId' : pid
     });
-    return this.http.get<HealthHistory[]>(this.baseApiUrl+'/HealthHistory/GetHistory',{headers:header});
+    return this.http.get<HealthHistory[]>('api/HealthHistory/GetHistory',{headers:header});
   }
   getPrescriptionByHHID(hhid:string):Observable<Prescription[]>
   {
@@ -67,6 +67,6 @@ export class PatientServicesService {
       'resposneType':'json',
       'hhId' : hhid
     });
-    return this.http.get<Prescription[]>(this.baseApiUrl+'/Prescriptions/Get_Prescription',{headers:header});
+    return this.http.get<Prescription[]>('api/Prescriptions/Get_Prescription',{headers:header});
   }
 }

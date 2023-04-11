@@ -1,0 +1,57 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: patient-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: api/Patient/Register_Patient
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 4322
+      - path: /api/Patient/SignIn_Patient
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 4322
+      - path: /api/Patient/GetAllPatients
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 4322
+      - path: /api/Patient/GetAllPatientsById
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 4322
+      - path: /api/Patient/Update_Patient
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 4322
+      - path: /api/HealthHistory/GetHistory
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 4322
+      - path: /api/Prescriptions/Get_Prescription
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 4322
