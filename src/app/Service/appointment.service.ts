@@ -42,7 +42,7 @@ export class AppointmentService {
   {
     
     
-    return this.http.put<Appointment>('api/Appointment/Update?AppointmentId='+ appId+'&status1='+ status,status);
+    return this.http.put<Appointment>(this.baseApiUrl+'/Appointment/Update?AppointmentId='+ appId+'&status1='+ status,status);
 
   }
 
@@ -50,7 +50,7 @@ export class AppointmentService {
   {
     
     
-    return this.http.put<Appointment>('api/Appointment/UpdateCheckUp?AppointmentId='+ appId+'&status1='+ status,status);
+    return this.http.put<Appointment>(this.baseApiUrl+'/Appointment/UpdateCheckUp?AppointmentId='+ appId+'&status1='+ status,status);
 
   }
 
