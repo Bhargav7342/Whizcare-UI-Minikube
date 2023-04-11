@@ -22,7 +22,7 @@ export class DoctorService {
       'Email':email
     });
 
-    return this.http.get<Doctor>('/Doctor/GetDoctorsByEmail',{headers:header})
+    return this.http.get<Doctor>('api/Doctor/GetDoctorsByEmail',{headers:header})
   }
 
 
