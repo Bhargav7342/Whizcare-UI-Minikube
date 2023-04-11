@@ -28,7 +28,7 @@ export class NurseService {
 
   AddCheckUpDetails(adddetails:PatientIntialCheckup):Observable<PatientIntialCheckup>
   {
-    return this.http.post<PatientIntialCheckup>('api/PatientCheckUp/AddcheckUpdetails',adddetails);
+    return this.http.post<PatientIntialCheckup>(this.baseApiUrl+'/PatientCheckUp/AddcheckUpdetails',adddetails);
   }
 
 
@@ -49,6 +49,6 @@ export class NurseService {
       'resposneType':'json',
       'appointment_id':appId,
     }); 
-    return this.http.get<PatientIntialCheckup>('api/PatientCheckUp/GetCheckUpDetailsByAppointmentId',{headers:header});
+    return this.http.get<PatientIntialCheckup>(this.baseApiUrl+'/PatientCheckUp/GetCheckUpDetailsByAppointmentId',{headers:header});
   }
 }
