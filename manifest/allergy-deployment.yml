@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: allergy-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: allergy-api
+  template:
+    metadata:
+      labels:
+        app: allergy-api
+    spec:
+      containers:
+        - name: allergy-api
+          image: bhargavbhat2000/allergy:7a34a6aadc6d2828398c3e77567a21c318f817be	
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 80
+    

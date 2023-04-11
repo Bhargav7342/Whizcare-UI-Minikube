@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: allergy-api-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: allergy-api
+  ports:
+    - targetPort: 80
+      port: 4325

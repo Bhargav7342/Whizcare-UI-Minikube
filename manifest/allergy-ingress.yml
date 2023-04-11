@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: allergy-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/Allergy/GetAllAllergy
+        pathType: Prefix
+        backend:
+          service:
+            name: allergy-api-service
+            port:
+              number: 4325
+      - path: /api/Allergy/AddAllergies
+        pathType: Prefix
+        backend:
+          service:
+            name: allergy-api-service
+            port:
+              number: 4325

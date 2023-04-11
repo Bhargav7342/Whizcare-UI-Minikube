@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: audit-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/Audit/AddAudit
+        pathType: Prefix
+        backend:
+          service:
+            name: audit-api-service
+            port:
+              number: 4326
