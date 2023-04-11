@@ -63,18 +63,4 @@ spec:
             name: appointment-api-service
             port:
               number: 4324
-      - path: /api/PatientCheckUp/AddcheckUpdetails
-        pathType: Prefix
-        backend:
-          service:
-            name: appointment-api-service
-            port:
-              number: 4324
-      - path: /api/PatientCheckUp/GetCheckUpDetailsByAppointmentId
-        pathType: Prefix
-        backend:
-          service:
-            name: appointment-api-service
-            port:
-              number: 4324
         
