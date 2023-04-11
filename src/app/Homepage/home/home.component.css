@@ -1,0 +1,66 @@
+
+
+
+.features{
+
+    padding: 2%;
+    text-align: center;
+    width: 70%;
+    font-size: 1vw;
+  
+}
+.features img{
+   
+    max-width: 90%; 
+    height: 90%;
+}
+
+.body{
+  margin-top: -1.3%;
+    background-image:url("../../../assets/back2.jpg");
+    background-size: cover;
+    opacity: 95%;
+  }
+
+  .footer{
+    background-color: rgb(161, 29, 183);
+   
+    bottom: 0;
+    
+  }
+  h1{
+   
+    font-size: 1.5vw;
+    font-weight: 450;
+    line-height: 0%;
+  }
+  p{
+    font-size: 1vw;
+    line-height: 100%;
+  }
+  .fottercon{
+    
+    text-align: center;
+    color: white;
+    font-size: 1vw;
+    margin: auto;
+  }
+  #subheading{
+    margin-left:3%;
+    padding: 4%;
+    font-size: 3vw;
+    position: relative;
+    color: rgba(0, 0, 0, 0.881); 
+    font-weight:400;
+    text-shadow: 1px 1px 10px rgb(245, 245, 245);
+    margin-bottom: -5%;
+  }
+  .logoback{
+   
+    padding: 23%;
+    background-image:url("../../../assets/bacground2.png");
+    background-size:contain ;
+    background-repeat: no-repeat;
+    margin-top: -0.8%;
+   
+  }

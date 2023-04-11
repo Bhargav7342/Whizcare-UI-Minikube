@@ -1,0 +1,18 @@
+<h1 *ngIf="appointments.length==0;else elsepart" style="margin-left: 5%;">Currently there are no Appointments!!</h1>
+<ng-template #elsepart >
+
+<div class="card-container"*ngFor='let p of patient;let i=index'>
+
+    <mat-card class="cards">
+        <mat-card-header>
+          <mat-card-title>Patient Name : {{p.firstName}} {{p.lastName}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Concern : {{appointments[i].concerns}}</p>
+        </mat-card-content>
+        <mat-card-actions class="card-buttons">
+          <button mat-raised-button id="Abutton" (click)="handleClick(appointments[i].appointmentId,p.patientId)">Add Diagnosis</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-template>

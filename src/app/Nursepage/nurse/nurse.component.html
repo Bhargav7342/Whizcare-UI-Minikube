@@ -1,0 +1,21 @@
+
+<h2>Welcome, Appointments for Today</h2>
+<div class="card-container" *ngFor="let a of appointments;let i=index"  >
+
+        <mat-card class="cards">
+            <mat-card-header>
+              <mat-card-title>Patient name : {{patients[i].firstName}}</mat-card-title>
+
+            </mat-card-header>
+            <mat-card-content>
+                <p>Doctor name : {{ a.doctorName}}</p>
+              </mat-card-content>
+            <mat-card-content>
+              <p>Concerns : {{a.concerns}}</p>
+            </mat-card-content>
+            <mat-card-actions class="card-buttons">
+              <button mat-raised-button color="primary" id="adddetailsbutton" (click)="healthHistory(a.patientId)"  [disabled]="added">View Health History</button>
+              <button mat-raised-button color="primary" id="adddetailsbutton" (click)="goto(a.appointmentId)"  [disabled]="added">Add Details</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>

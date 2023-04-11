@@ -1,0 +1,23 @@
+
+<form #signin="ngForm" (ngSubmit)="signinFunc(signin.value)"> 
+    <div class="center-content">
+      <mat-card class="example-card">
+        <mat-card-content>
+              <h1>Sign In</h1>
+              <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="Enter Email" value="" name="Email" id="email" ngModel>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Enter Password" value="" name="Password" id="pass" ngModel>
+              </mat-form-field>
+              <button mat-button color="primary" type="submit" id="bt1"  >Sign In</button>
+        </mat-card-content>
+        <mat-card-content>
+            <h4>Are you a new User ? <a routerLink="/psignup">Register</a></h4>
+          </mat-card-content>
+        </mat-card>      
+    </div>
+</form>
+

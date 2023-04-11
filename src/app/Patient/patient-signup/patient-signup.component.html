@@ -1,0 +1,93 @@
+<form #signupForm="ngForm" (ngSubmit)="signup(signupForm.value)">
+    <div class="center-content">
+      <mat-card class="example-card">
+        <mat-card-content>
+              <h1>Sign up</h1>
+              <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="Enter Email" value="" name="Email" ngModel pattern="(([a-zA-Z]+)(\d+)?)@([a-zA-Z]+).([a-zA-Z]{2,4})" required>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Enter Password (Min. 8 characters Max. 20 characters)" value="" name="Password" ngModel pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,20}" required> 
+                <mat-hint>Password must contain 1 uppercase,lowercase,digit and special character </mat-hint>
+                
+              </mat-form-field>
+              <br><mat-form-field class="example-full-width"> 
+                <mat-label>First Name</mat-label>
+                <input type="Name" matInput placeholder="Enter name" value="" name="FirstName" ngModel required>
+              </mat-form-field>
+              <mat-form-field class="example-full-width"> 
+                <mat-label>Last Name</mat-label>
+                <input type="Name" matInput placeholder="Enter name" value="" name="LastName" ngModel required>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Phone Number</mat-label>
+                <input type="Phone Number" matInput placeholder="Enter Phone Number" value="" name="Phone" ngModel pattern="[6-9]\d{9}" required>
+              </mat-form-field>
+              <mat-grid-list cols="3" rowHeight="2:1">
+                <mat-grid-tile>
+                <mat-form-field  class="example-full-width">
+                  <mat-label>Gender</mat-label>
+                  <mat-select  name="Gender" ngModel required>
+                    <mat-option value="Male">Male</mat-option>
+                    <mat-option value="Female">Female</mat-option>
+                    <mat-option value="Other">Other</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                  </mat-grid-tile>
+              
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>BloodGroup</mat-label>
+                    <mat-select name="BloodGroup" ngModel>
+                      <mat-option value="A+">A+</mat-option>
+                      <mat-option value="A-">A-</mat-option>
+                      <mat-option value="B+">B+</mat-option>
+                
+                        <mat-option value="B-">B-</mat-option>
+                        <mat-option value="O+">O+</mat-option>
+                        <mat-option value="O-">O-</mat-option>
+                       
+                          <mat-option value="AB+">AB+</mat-option>
+                          <mat-option value="AB-">AB-</mat-option>
+                       
+                      
+                    </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+              
+                <mat-grid-tile>
+                  <mat-form-field appearance="fill">
+                    <mat-label>DOB</mat-label>
+                    <input matInput [matDatepicker]="picker" class="dateclass" name="DateOfBirth" ngModel required>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field> 
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Zipcode</mat-label>
+                    <input type="Zipcode" matInput placeholder="Enter Zipcode" (change)="findCityState()" value="" name="Zipcode" [(ngModel)]="addPatient.zipcode" pattern="\d{6}" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>City</mat-label>
+                    <input type="City" matInput placeholder="Enter City" value="" name="City" [(ngModel)]="addPatient.city" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>State</mat-label>
+                    <input type="State" matInput placeholder="Enter State" value="" name="State" [(ngModel)]="addPatient.state" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                
+              </mat-grid-list>
+              
+              <button mat-button color="primary" type="submit" id="bt1" [disabled]="!signupForm.form.valid" >Sign Up</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    </form>

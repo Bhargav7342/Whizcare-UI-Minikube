@@ -1,0 +1,30 @@
+
+<h2 class="size">Visit History</h2>
+
+<div *ngFor="let h of health" >
+    <mat-card style="width: 65%" class="firstCard">
+
+    
+        
+        <div id="hhcontent">
+            <p> <strong>Date :</strong>  {{h.date|customdate}}
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <strong>Doctor Name : </strong> {{h.doctorName}}</p>
+            <p> <strong>Diagnosis : </strong>  {{h.diagnosis}}</p>
+        </div>
+  
+   <mat-grid-list cols="2" rowHeight="8:1">
+   <mat-grid-tile>
+    <mat-card-actions class="btn" >
+        <button id="buttons" (click)="openDiaog(h.hhId)" mat-raised-button color="primary">Prescription</button>
+    </mat-card-actions>
+   </mat-grid-tile>
+   <mat-grid-tile>
+    <mat-card-actions class="btn" >
+        <button id="buttons" (click)="openDialog2(h.appointmentId)"  mat-raised-button color="primary">Check Up info</button>
+    </mat-card-actions>
+   </mat-grid-tile>
+</mat-grid-list>
+
+</mat-card>
+</div>

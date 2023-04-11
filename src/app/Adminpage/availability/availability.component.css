@@ -1,0 +1,24 @@
+.example-section{
+    padding: 5%;
+    margin: 5%;
+}
+
+#card{
+    width: 50%;
+    margin: auto;
+}
+
+#savebutton{
+    margin-top: 1%;
+}
+
+#close{
+    background-color: white;
+    margin-left: 95%;
+    width: 5%;
+    border: none;
+}
+
+#close:hover{
+    background-color: rgb(160, 157, 157);
+}

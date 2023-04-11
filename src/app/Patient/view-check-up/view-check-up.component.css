@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+.wrapper{
+    margin-top: 2%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+    
+    grid-auto-rows: minmax(70px,auto);
+    position: relative;
+    /* top: -200px; */
+}
+.eight{
+    grid-column: 1/2;
+    grid-row: 8;
+    width: 200px;
+}
+.eightCard{
+    width: 600px;
+    position: relative;
+    top: -240px;
+}
+.subTitle{
+   text-align: center;
+}
+.title{
+    position: relative;
+    left: 20px;
+}
+.title:hover{
+    text-decoration: underline;
+}
+@media (Max-width:500px) {
+    .subTitle{
+        position: relative;
+        left: 40px;
+    }
+    .eightCard{
+        width: 400px;
+    }
+    
+}
+.eight{
+    padding-bottom: -500px;
+}

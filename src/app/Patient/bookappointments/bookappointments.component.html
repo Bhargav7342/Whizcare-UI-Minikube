@@ -1,0 +1,35 @@
+<form #appointmentForm="ngForm" (ngSubmit)="bookAppointment(appointmentForm.value)">
+
+    <mat-card class="example-card">
+      <!-- <mat-card-content> -->
+        <h2>Book Appointment</h2>
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" class="dateclass" name="date" [(ngModel)]="date1"  [min]="currDate">
+            
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field> 
+          <button mat-fab extended color="accent" class="btn-color"  type="button" (click)="findDocter()">Find Doctors</button>
+         
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Select Doctor</mat-label>
+            <mat-select name="doctor" ngModel >
+              <mat-option value="{{d.doctorId}},{{d.doctorName}}" *ngFor="let d of availableDoctors ">{{d.doctorName}}, {{d.qualification}} - {{d.department}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Enter Concerns</mat-label>
+            <input matInput name="concerns" ngModel>
+          </mat-form-field>
+    
+          <button mat-fab extended color="accent" class="btn-color"  type="submit">
+            Book
+          </button>
+       
+      <!-- </mat-card-content> -->
+    
+    </mat-card>
+    </form>

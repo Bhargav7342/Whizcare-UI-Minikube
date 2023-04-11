@@ -1,0 +1,32 @@
+h2{
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    margin-top: 5%;
+    color: #000000;
+}
+.example-card{
+    
+    width: 600px;
+    margin: auto;
+    background: #ECECEC;
+    border-radius: 50px; 
+}
+mat-form-field {
+    margin: auto;
+   width: 70%;
+
+  }
+button{
+    margin: auto;
+   width: 50%;
+   margin-bottom: 2%;
+   color: white;
+}
+.btn-color{
+    background: #A11DB7;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 48px;
+}

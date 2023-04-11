@@ -1,0 +1,31 @@
+
+<mat-card class="example-card">
+    <!-- <mat-card-content> -->
+      <h1>Profile Details</h1>
+      <!-- <p class="name">Name : Aman Shankar</p> -->
+      <div class="first-3-rows">
+        <p>{{signupobj.firstName}} {{signupobj.lastName}}</p>
+        <p>{{signupobj.email}}</p>
+        <p>{{signupobj.phone}}</p>
+      </div>
+      
+      <mat-grid-list class="first-3-rows" cols="3" rowHeight="4:1">
+        <mat-grid-tile>Gender : {{signupobj.gender}}</mat-grid-tile>
+        <mat-grid-tile>DOB : {{signupobj.dateOfBirth|customdate}}</mat-grid-tile>
+        <mat-grid-tile>Blood Group : {{signupobj.bloodGroup}}</mat-grid-tile>
+      </mat-grid-list>
+      <p class="address">Address : {{signupobj.city}} , {{signupobj.state}} - {{signupobj.zipcode}}</p>
+      <mat-grid-list class="first-2-rows" cols="2" rowHeight="6:1">
+        <mat-grid-tile><button mat-fab extended color="accent" class="btn-color" (click)="editpassword()">
+          Change Password
+        </button></mat-grid-tile>
+        <mat-grid-tile><button mat-fab extended color="accent" class="btn-color" (click)="editprofile()">
+          Edit Profile
+        </button></mat-grid-tile>
+      </mat-grid-list>
+      
+
+     
+    <!-- </mat-card-content> -->
+  
+  </mat-card>

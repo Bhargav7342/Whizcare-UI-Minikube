@@ -1,0 +1,49 @@
+
+
+<h1>Patient Details</h1>
+
+<button mat-raised-button color="primary" style="margin-top:1%;margin-left: 95%;background-color:rgb(161, 29, 183);" (click)="goBack()">Back</button>
+<mat-card id="card">
+    <mat-card-content>
+        <mat-grid-list cols="3" rowHeight="1:1">
+            <mat-grid-tile>
+                    <mat-card-content>
+                        <h4>Patient Name : {{patientDet.firstName}} {{patientDet.lastName}}</h4>
+                        <h4>Age : {{patientDet.dateOfBirth|agePipe}}</h4>
+                        <h4>Gender : {{patientDet.gender}}</h4>
+                        <h4>Blood Group : {{patientDet.bloodGroup}}</h4>       
+                        <h4>Height(cm) : {{patientInitialDet.height}}</h4> 
+                        <h4>SPO2 : {{patientInitialDet.spo2}}</h4>
+                    </mat-card-content>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card-content>
+                    <h4>Weight (KG) : {{patientInitialDet.weight}}</h4> 
+                    <h4>BP (mm/Hg) : {{patientInitialDet.bloodPressure}}</h4>
+                    <h4>Temperature (C) : {{patientInitialDet.temperature}}</h4>
+                    <h4>Sugar Level : {{patientInitialDet.sugarLevel}}</h4>
+                    <h4>Allergy : <span *ngFor="let a of allergy">{{a.allergyName}},</span></h4>
+                    <h4>Additional Details : {{patientInitialDet.additionalDetails}}</h4>   
+                    
+                </mat-card-content>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card-content>
+                    <button mat-raised-button id="B2" (click)="viewHealthHistory()">View Health History</button>
+                </mat-card-content>
+            </mat-grid-tile>
+          </mat-grid-list>
+            <mat-card-content>
+                <mat-form-field id="textbox" class="example-full-width">
+                    <mat-label>Diagnosis</mat-label>
+                    <textarea matInput placeholder="Details" name="diagnosis" [(ngModel)]="diagnosis"></textarea>
+                  </mat-form-field>
+            </mat-card-content>
+            <mat-card-content id="buttons">
+                <button mat-raised-button id="B1" (click)="Clicked()"><mat-icon>note_add</mat-icon>Add Prescription</button>
+                <button mat-raised-button id="B1" (click)="ViewPrescription()"><mat-icon>visibility</mat-icon>View Prescription</button><br>
+                <button mat-raised-button id="B3" (click)="Save()">Save Details</button>
+            </mat-card-content>
+    </mat-card-content>
+</mat-card>
+

@@ -1,0 +1,55 @@
+<!-- <p>checkup-info works!</p> -->
+
+<h2 style="position: relative;top: 20px; left: 20px;">Check Up info :</h2>
+<div style="top:20px;" class="wrapper" >
+
+    <div class="one">
+        <mat-card>
+            <mat-card-subtitle class="title" >Heigh :</mat-card-subtitle>
+            <mat-card-content class="subTitle">{{checkupdata.height}} cm</mat-card-content>
+        </mat-card>
+    </div>
+    <div class="two">
+        <mat-card>
+            <mat-card-subtitle class="title" >Weight :</mat-card-subtitle>
+            <mat-card-content class="subTitle">{{checkupdata.weight}} kg</mat-card-content>
+        </mat-card>
+    </div>
+    <div class="three">
+        <mat-card>
+            <mat-card-subtitle class="title" >spO2 :</mat-card-subtitle>
+            <mat-card-content class="subTitle">{{checkupdata.spo2}} </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="four">
+        <mat-card>
+            <mat-card-subtitle class="title" >Temp :</mat-card-subtitle>
+            <mat-card-content class="subTitle">{{checkupdata.temperature}} &#8457;</mat-card-content>
+        </mat-card>
+    </div>
+    <div class="five">
+        <mat-card>
+            <mat-card-subtitle class="title" >BP :</mat-card-subtitle>
+            <mat-card-content class="subTitle">{{checkupdata.bloodPressure}} mmHg</mat-card-content>
+        </mat-card>
+    </div>
+    <div class="six">
+        <mat-card>
+            <mat-card-subtitle class="title" >Sugar :</mat-card-subtitle>
+            <mat-card-content class="subTitle">{{checkupdata.sugarLevel}} mmoI/L</mat-card-content>
+        </mat-card>
+    </div>
+    <div class="seven">
+        <mat-card>
+            <mat-card-subtitle class="title" >Allergy :</mat-card-subtitle>
+            <mat-card-content class="subTitle" ><span *ngFor="let a of allergy">{{a.allergyName}},</span></mat-card-content>
+        </mat-card>
+    </div>
+   
+    <div class="eight">
+        <mat-card class="eightCard">
+            <mat-card-subtitle class="title" >Additional Info :</mat-card-subtitle>
+            <mat-card-content class="subTitle">{{checkupdata.additionalDetails}}</mat-card-content>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.card{
+    width: 70%;
+    left: 30%;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.main{
+    position: relative;
+    top: 20px;
+    left: -40px;
+}
+
+.table{
+    width: 70%;
+    position: relative;
+    left:90px;
+    top: 20px;
+}
+
+.head{
+    
+    position: relative;
+    margin: 2% 5%;
+    font-size: large;
+}
+.head:hover{
+    text-decoration: underline;
+}

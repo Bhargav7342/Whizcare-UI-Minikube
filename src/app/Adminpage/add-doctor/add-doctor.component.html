@@ -1,0 +1,47 @@
+<form #appointmentForm="ngForm" (ngSubmit)="AddDoctor(appointmentForm.value)">
+
+    <mat-card class="example-card">
+
+        <h1>Add Doctor Details</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter Name</mat-label>
+            <input matInput name="DoctorName" [(ngModel)]="doctor.doctorName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Enter Email</mat-label>
+            <input type="email" matInput name="Email" [(ngModel)]="doctor.email" required >
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Qualification</mat-label>
+            <input matInput name="Qualification" [(ngModel)]="doctor.qualification" required>
+          </mat-form-field>
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Select Department</mat-label>
+            <mat-select name="Department" [(ngModel)]="doctor.department" required>
+              <mat-option value="Cardiology">Cardiology</mat-option>
+              <mat-option value="Dermatology">Dermatology</mat-option>
+              <mat-option value="General">General</mat-option>
+              <mat-option value="Gynecology">Gynecology</mat-option>
+              <mat-option value="Neurology">Neurology</mat-option>
+              <mat-option value="Ophthalmology">Ophthalmology</mat-option>
+              <mat-option value="Orthopedics">Orthopedics</mat-option>
+              <mat-option value="Oncology">Oncology</mat-option>
+              <mat-option value="Psychiatry">Psychiatry</mat-option>
+              <mat-option value="Pediatrics">Pediatrics</mat-option>
+              <mat-option value="Urology">Urology</mat-option>
+            </mat-select>
+          </mat-form-field>
+        
+          
+    
+    
+          <button mat-fab extended color="accent" class="btn-color" [disabled]="!appointmentForm.form.valid">
+            Add
+          </button>
+      
+    
+    </mat-card>
+    </form>

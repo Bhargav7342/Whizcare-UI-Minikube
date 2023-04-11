@@ -1,0 +1,22 @@
+.card-buttons {
+    justify-content: flex-end;
+    gap: 10px;
+
+
+  }
+
+.cards{
+    width: 80%;
+    margin: 2% 5%;
+
+}
+.card-buttons button:first-child {
+    background-color: green;
+    color: white;
+  }
+
+
+  .card-buttons button:last-child {
+    background-color: red;
+    color: white;
+  }

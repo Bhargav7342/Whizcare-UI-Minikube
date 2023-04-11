@@ -1,0 +1,31 @@
+
+  <button mat-raised-button color="primary" style="margin-top:1%;margin-left: 75%;background-color:rgb(161, 29, 183);" (click)="bookAppointment()">Book Appointments</button>
+  <div class="size">
+    Appointments History
+  </div>
+  <div class="card-container"   *ngFor='let t of appointments'>
+  
+      <mat-card class="cards">
+
+            <div class="appdata">
+            <strong>Date : </strong>{{t.date | customdate}}<br>
+              <strong>Doctor name : </strong>{{t.doctorName}} &nbsp;<br>
+              <strong>Concern :</strong>{{t.concerns}}
+            </div>
+  
+        <div>
+          <mat-card-actions class="card-buttons">
+            <div [ngSwitch]= t.status #switch>
+              <button  mat-raised-button *ngSwitchCase="'Sent'" style="background-color:rgb(244, 209, 11); color:white"(click)="handleClick()">{{t.status}}</button>
+              <button mat-raised-button *ngSwitchCase="'Accepted'" style="background-color:green;color:white"(click)="handleClick()">{{t.status}}</button>
+              <button  mat-raised-button *ngSwitchCase="'Rejected'" style="background-color:red;color:white"(click)="handleClick()">{{t.status}}</button>
+              <button  mat-raised-button *ngSwitchCase="'Completed'" style="background-color:rgb(0, 60, 255);color:white"(click)="handleClick()">{{t.status}}</button>
+              
+          </div>
+          </mat-card-actions>
+        </div>
+        <!-- </mat-grid-tile>
+        </mat-grid-list> -->
+        </mat-card>
+  
+      </div>

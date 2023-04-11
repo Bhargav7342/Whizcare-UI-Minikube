@@ -1,0 +1,28 @@
+
+    <p>
+      <mat-toolbar class="navbar">
+        <mat-icon id="iconsp1"> business</mat-icon>
+        <span>WhizCare Hospital</span>
+        <span class="example-spacer"></span>
+        <ng-template [ngIf]="status=='login'">
+        <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+            <button mat-raised-button (click)="logout()">Logout</button>
+        </ng-container>
+        <ng-template #loggedOut>
+            <button mat-raised-button (click)="PatientLogin()" >Patient Login</button>
+            <button mat-mini-fab  matTooltip="Management Login" (click)="loginWithRedirect()" id="iconsp"><mat-icon>assignment_ind</mat-icon></button>
+          </ng-template>
+        </ng-template>
+        <ng-template [ngIf]="status=='logout'">
+        
+          <button mat-raised-button (click)="logoutpatient()" id="iconsp">Back</button>
+        </ng-template>
+        <ng-template [ngIf]="status=='ploggedin'">
+          <button mat-raised-button (click)="logoutpatient1()">log Out</button>
+        </ng-template>
+
+      </mat-toolbar>
+    </p>  
+
+    <router-outlet></router-outlet>
+    

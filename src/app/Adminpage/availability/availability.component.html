@@ -1,0 +1,21 @@
+<div id="cards">
+<mat-card id="card">
+  <button id="close" [routerLink]="['/admin']"><mat-icon>close</mat-icon></button>
+  <mat-card-content>
+    
+    <form #signupForm="ngForm" (ngSubmit)="saveAvailability()">
+<section class="example-section" >
+    <h3>Doctor Name : {{dname}}</h3>
+    <h4>Select Days and Click on Save:</h4>
+    <input type="checkbox" [checked]="days.monday" name="monday" [(ngModel)]="days.monday"><label> Monday </label><br>
+    <input type="checkbox" [checked]="days.tuesday" name="tuesday" [(ngModel)]="days.tuesday"><label> Tuesday </label><br>
+    <input type="checkbox" [checked]="days.wednesday" name="wednesday" [(ngModel)]="days.wednesday"><label> Wednesday </label><br>
+    <input type="checkbox" [checked]="days.thursday" name="thursday" [(ngModel)]="days.thursday"><label> Thursday </label><br>
+    <input type="checkbox" [checked]="days.friday" name="friday" [(ngModel)]="days.friday"><label> Friday </label><br>
+    <input type="checkbox" [checked]="days.saturday" name="saturday" [(ngModel)]="days.saturday"><label> Saturday </label><br>
+    <input type="checkbox" [checked]="days.sunday" name="sunday" [(ngModel)]="days.sunday"><label> Sunday </label><br>
+    <button mat-raised-button type="submit" id="savebutton">Save Changes</button>
+  </section></form>
+</mat-card-content>
+</mat-card>
+</div>

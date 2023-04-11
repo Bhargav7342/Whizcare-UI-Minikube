@@ -1,0 +1,24 @@
+<button mat-raised-button color="primary" style="margin-left: 80%;background-color:rgb(161, 29, 183);" (click)="goBack()">Back</button>
+<div *ngIf="appointments.length==0;else elsepart" style="margin-left: 5%;"><h1>No Pending Appointments</h1></div>
+<ng-template #elsepart>
+<div class="card-container" *ngFor="let a of appointments;let i=index">
+
+    <mat-card class="cards">
+        <mat-card-header>
+          <mat-card-title>Patient name:{{patients[i].firstName}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Concern : {{a.concerns}}</p>
+        </mat-card-content>
+        <mat-card-content>
+          <p>Date : {{a.date|customdate}}</p>
+        </mat-card-content>
+        <mat-card-actions class="card-buttons">
+          <button mat-raised-button (click)="accept(a.appointmentId,patients[i].email,a.date)" >Accept</button>
+          <button mat-raised-button  (click)="reject(a.appointmentId,patients[i].email,a.date)">Reject</button>
+    
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-template>
+  

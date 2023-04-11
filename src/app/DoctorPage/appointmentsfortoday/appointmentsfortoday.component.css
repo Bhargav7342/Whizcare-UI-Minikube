@@ -1,0 +1,16 @@
+.card-buttons {
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+.cards{
+    width: 65%;
+    margin: 2% 5%;
+    background-color: rgb(236, 236, 236);
+}
+
+#Abutton{
+  color: white;
+  background-color: rgb(161, 29, 183);
+  margin-left: 3%;
+}

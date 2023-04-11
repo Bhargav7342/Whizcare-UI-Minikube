@@ -1,0 +1,6 @@
+
+<mat-tab-group   class="tabsc">
+    <mat-tab label="Appointments"><h1 id="welcome">Hi... Welcome, {{patientName}}</h1><app-appointmenthistory [patientId]="patientId" [patientEmail]="patientEmail"></app-appointmenthistory></mat-tab>
+    <mat-tab label="Health History"><app-healthhistory [patientId]="patientId"></app-healthhistory></mat-tab>
+    <mat-tab label="Profile"><app-viewprofile [patientId]="patientId"></app-viewprofile></mat-tab>
+  </mat-tab-group>

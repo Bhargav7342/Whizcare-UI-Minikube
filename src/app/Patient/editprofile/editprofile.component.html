@@ -1,0 +1,103 @@
+<button id="close" mat-button [mat-dialog-close]="true" cdkFocusInitial><mat-icon>close</mat-icon></button>
+<form id="forms" #signupForm="ngForm" (ngSubmit)="Save(signupForm.value)">
+    <div class="center-content">
+        <mat-card class="example-card">
+            <mat-card-content>
+                <h1>Patient Details</h1>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput placeholder="Enter Email" name="email" [(ngModel)]="editdata.email" disabled>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput [type]="showPassword ? 'text' : 'password'" placeholder="Enter Password" name="password"
+                        [(ngModel)]="editdata.password" disabled>
+                        <!-- <mat-icon class="icon-pwd" matSuffix (click)="togglePasswordVisibility()">{{showPassword?'visibility_off':'visibility'}}</mat-icon> -->
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>First Name</mat-label>
+                    <input type="Name" matInput placeholder="Enter first name" name="firstName"
+                        [(ngModel)]="editdata.firstName">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Last Name</mat-label>
+                    <input type="Name" matInput placeholder="Enter last name" name="lastName"
+                        [(ngModel)]="editdata.lastName">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Phone Number</mat-label>
+                    <input type="Phone Number" matInput placeholder="Enter Phone Number" name="phone"
+                        [(ngModel)]="editdata.phone" pattern="[6-9]\d{9}">
+                </mat-form-field>
+                <mat-grid-list cols="3" rowHeight="2:1">
+                    <mat-grid-tile>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Gender</mat-label>
+                            <mat-select name="gender" [(ngModel)]="editdata.gender" [value]="editdata.gender">
+                                <mat-option></mat-option>
+                                <mat-option value="Male">Male</mat-option>
+                                <mat-option value="Female">Female</mat-option>
+                                <mat-option value="Other">Other</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>BloodGroup</mat-label>
+                            <mat-select name="bloodGroup" [(ngModel)]="editdata.bloodGroup"
+                                [value]="editdata.bloodGroup">
+                                <mat-option></mat-option>
+                                <mat-option value="A+">A+</mat-option>
+                                <mat-option value="A-">A-</mat-option>
+                                <mat-option value="B+">B+</mat-option>
+
+                                <mat-option value="B-">B-</mat-option>
+                                <mat-option value="O+">O+</mat-option>
+                                <mat-option value="O-">O-</mat-option>
+
+                                <mat-option value="AB+">AB+</mat-option>
+                                <mat-option value="AB-">AB-</mat-option>
+
+
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field appearance="fill" class="example-full-width">
+                            <mat-label>DOB</mat-label>
+                            <input matInput [matDatepicker]="picker" class="dateclass" name="dateOfBirth"
+                                [(ngModel)]="date">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>City</mat-label>
+                            <input type="City" matInput placeholder="Enter City" name="city"
+                                [(ngModel)]="editdata.city">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>State</mat-label>
+                            <input type="State" matInput placeholder="Enter State" name="state"
+                                [(ngModel)]="editdata.state">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Zipcode</mat-label>
+                            <input type="Zipcode" matInput placeholder="Enter Zipcode" name="zipcode"
+                                [(ngModel)]="editdata.zipcode" pattern="\d{6}">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+
+                <button mat-button color="primary" type="submit" id="bt1">Save</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</form>

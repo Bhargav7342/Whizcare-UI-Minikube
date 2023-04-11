@@ -1,0 +1,16 @@
+
+<mat-grid-list cols="3" rowHeight="1.5:1" >
+    <mat-grid-tile *ngFor="let d of doctor">
+        <mat-card class="docCards" >
+        <mat-card-header>
+            Doctor Name : {{d.doctorName}}
+        </mat-card-header>
+        <mat-card-content>
+            <p>Department : {{d.department}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="goto(d.email,d.doctorName)">Change Availability</button>
+        </mat-card-actions>
+    </mat-card>
+</mat-grid-tile>
+</mat-grid-list>
