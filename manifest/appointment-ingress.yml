@@ -1,0 +1,66 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: appointment-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/Appointment/getappointmentsbypatientid
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 4324
+      - path: /api/Appointment/BookAppiontment
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 4324
+      - path: /api/Appointment/Email_Notification
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 4324
+      - path: /api/Appointment/Update/{AppoinmentId}/{status1}
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 4324
+      - path: api/Appointment/UpdateCheckUp/{AppoinmentId}/{status1}
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 4324
+
+      - path: /api/Appointment/getappointmentsbyDate
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 4324
+      - path: /api/PatientCheckUp/AddCheckUpDetails
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 4324
+      - path: /api/PatientCheckUp/GetCheckUpDetailsByAppointmentId
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 4324
+        
