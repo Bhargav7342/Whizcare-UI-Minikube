@@ -13,20 +13,7 @@ spec:
             name: doctor-api-service
             port:
               number: 4323
-      - path: /api/Appointment/getappointmentsbyDoctoridAndStatus
-        pathType: Prefix
-        backend:
-          service:
-            name: doctor-api-service
-            port:
-              number: 4323
-      - path: /api/Appointment/GetAppointmentsAfterCheckup
-        pathType: Prefix
-        backend:
-          service:
-            name: doctor-api-service
-            port:
-              number: 4323
+      
       - path: /api/Doctor/AddDoctor
         pathType: Prefix
         backend:
@@ -41,13 +28,7 @@ spec:
             name: doctor-api-service
             port:
               number: 4323
-      - path: /api/PhysicianAvailabilityStatus/AddAvailability
-        pathType: Prefix
-        backend:
-          service:
-            name: doctor-api-service
-            port:
-              number: 4323
+      
       - path: /api/Doctor/GetDoctorsByAvailability
         pathType: Prefix
         backend:
@@ -56,6 +37,14 @@ spec:
             port:
               number: 4323
 
+
+      - path: /api/PhysicianAvailabilityStatus/AddAvailability
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 4323
       - path: /api/PhysicianAvailabilityStatus/GetStatus
         pathType: Prefix
         backend:
