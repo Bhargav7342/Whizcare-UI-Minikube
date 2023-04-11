@@ -36,7 +36,7 @@ export class DoctorService {
     });
     
 
-    return this.http.get<Appointment[]>('api/Appointment/getappointmentsbyDoctoridAndStatus',{headers:header});
+    return this.http.get<Appointment[]>(this.baseApiurl2+'/Appointment/getappointmentsbyDoctoridAndStatus',{headers:header});
   }
   
   GetAppointmentsAfterCheckup(date:string,docId:string):Observable<Appointment[]>
@@ -47,7 +47,7 @@ export class DoctorService {
       'doc_id':docId,
       'dates':date
     });
-    return this.http.get<Appointment[]>('api/Appointment/GetAppointmentsAfterCheckup',{headers:header})
+    return this.http.get<Appointment[]>(this.baseApiurl2+'/Appointment/GetAppointmentsAfterCheckup',{headers:header})
   }
   
   AddHealthHistory(diagnosis:HealthHistory):Observable<HealthHistory>
