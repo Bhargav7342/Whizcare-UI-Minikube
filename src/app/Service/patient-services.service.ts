@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-// import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment.development';
 import { HealthHistory, Patient, Prescription } from '../Models/database.models';
 @Injectable({
   providedIn: 'root'
 })
 export class PatientServicesService {
 
-  // baseApiUrl:string=environment.baseApiUrl;
+  baseApiUrl:string=environment.baseApiUrl;
 
   constructor(private http:HttpClient) { }
 

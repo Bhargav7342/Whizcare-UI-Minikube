@@ -1,15 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-// import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment.development';
 import { Appointment, Patient, PatientIntialCheckup } from '../Models/database.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NurseService {
-  // baseApiUrl:string=environment.baseApiUrl1;
-  // baseApiUrl2:string=environment.baseApiUrl
+  baseApiUrl:string=environment.baseApiUrl1;
+  baseApiUrl2:string=environment.baseApiUrl
 
   constructor(private http:HttpClient) { }
 

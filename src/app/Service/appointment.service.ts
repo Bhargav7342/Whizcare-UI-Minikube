@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders,HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-// import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment.development';
 import { Appointment, PatientIntialCheckup, PhysicianAvailabilityStatus } from '../Models/database.models';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Appointment, PatientIntialCheckup, PhysicianAvailabilityStatus } from '
 })
 export class AppointmentService {
 
-  // baseApiUrl:string=environment.baseApiUrl1;
+  baseApiUrl:string=environment.baseApiUrl1;
 
   constructor(private http:HttpClient) { }
 
@@ -53,5 +53,8 @@ export class AppointmentService {
     return this.http.put<Appointment>('api/Appointment/UpdateCheckUp?AppointmentId='+ appId+'&status1='+ status,status);
 
   }
+
+
+ 
   
 }

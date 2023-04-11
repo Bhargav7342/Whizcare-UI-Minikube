@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-// import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment.development';
 import { Audit } from '../Models/database.models';
 import { Observable } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AuditserviceService {
 
-  // baseApiUrl:string=environment.baseApiUrlAudit
+  baseApiUrl:string=environment.baseApiUrlAudit
 
   constructor(private http:HttpClient) { }
 
