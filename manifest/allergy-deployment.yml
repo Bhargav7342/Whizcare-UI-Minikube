@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: allergy-api
-          image: bhargavbhat2000/allergy:7a34a6aadc6d2828398c3e77567a21c318f817be	
+          image: bhargavbhat2000/allergy:cc72da7d675eaf6c5a588cf836340afdd021d6b4	
           imagePullPolicy: Always
           resources:
             requests:

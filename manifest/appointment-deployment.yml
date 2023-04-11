@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: appointment-api
-          image: bhargavbhat2000/appointment:6b7cbf857de21c927ac393362585c82d8f880ae0
+          image: bhargavbhat2000/appointment:cc72da7d675eaf6c5a588cf836340afdd021d6b4
           imagePullPolicy: Always
           resources:
             requests:
