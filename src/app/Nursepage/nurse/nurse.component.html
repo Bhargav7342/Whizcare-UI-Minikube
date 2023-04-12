@@ -1,5 +1,8 @@
 
 <h2>Welcome, Appointments for Today</h2>
+
+<h1 *ngIf="appointments.length==0;else elsepart" style="margin-left: 5%;">Currently there are no Appointments!!</h1>
+<ng-template #elsepart>
 <div class="card-container" *ngFor="let a of appointments;let i=index"  >
 
         <mat-card class="cards">
@@ -19,3 +22,4 @@
             </mat-card-actions>
         </mat-card>
     </div>
+    </ng-template>
